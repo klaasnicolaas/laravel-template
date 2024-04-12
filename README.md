@@ -17,15 +17,32 @@ This is a template repository for Laravel projects, including the following feat
 
 - Laravel 11.x
 - PHP 8.3
-- Laravel Sail (docker)
-- Laravel Pint (linting)
+- [Laravel Sail][sail] (docker)
+- [Laravel Pint][pint] (linting)
 - Devcontainer for Visual Studio Code
+- [Filament PHP][filament] (admin dashboard)
+
+## Getting Started
+
+TODO
+
+### Create admin user
+
+To create an admin user for the Filament dashboard, run the following command:
+
+```bash
+php artisan make:filament-user
+```
 
 ## License
 
 Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[sail]: https://laravel.com/docs/11.x/sail
+[pint]: https://laravel.com/docs/11.x/pint
+[filament]: https://filamentphp.com
+
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge
 [contributors-shield]: https://img.shields.io/github/contributors/klaasnicolaas/laravel-template.svg?style=for-the-badge
 [contributors-url]: https://github.com/klaasnicolaas/laravel-template/graphs/contributors
