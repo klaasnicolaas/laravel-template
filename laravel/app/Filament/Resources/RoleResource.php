@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\RoleResource\Pages;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -30,7 +31,14 @@ class RoleResource extends Resource
                     TextInput::make('name')
                         ->label('Name')
                         ->required()
+                        ->unique(ignoreRecord: true)
                         ->placeholder('Enter the role name'),
+                    Select::make('permissions')
+                        ->label('Permissions')
+                        ->multiple()
+                        ->relationship('permissions', 'name')
+                        ->preload()
+                        ->placeholder('Select the permissions'),
                 ]),
             ]);
     }
@@ -39,13 +47,19 @@ class RoleResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('id')->sortable(),
                 TextColumn::make('name'),
+                TextColumn::make('created_at')
+                    ->dateTime('d-M-Y')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

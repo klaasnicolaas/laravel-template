@@ -30,7 +30,7 @@ class PermissionResource extends Resource
                     TextInput::make('name')
                         ->label('Name')
                         ->required()
-                        ->unique()
+                        ->unique(ignoreRecord: true)
                         ->placeholder('Enter the permission name'),
                 ]),
             ]);
@@ -40,13 +40,19 @@ class PermissionResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('id')->sortable(),
                 TextColumn::make('name'),
+                TextColumn::make('created_at')
+                    ->dateTime('d-M-Y')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
