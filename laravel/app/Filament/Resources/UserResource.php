@@ -7,6 +7,7 @@ use App\Models\User;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -44,6 +45,12 @@ class UserResource extends Resource
                         ->dehydrated(fn ($state) => filled($state))
                         ->required(fn ($livewire) => ($livewire instanceof CreateUser))
                         ->maxLength(255),
+                    Select::make('roles')
+                        ->label('Roles')
+                        ->multiple()
+                        ->relationship('roles', 'name')
+                        ->preload()
+                        ->placeholder('Select the roles'),
                 ])->columns(2),
             ]);
     }
