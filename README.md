@@ -39,7 +39,7 @@ php artisan make:filament-user
 By default there are 3 types of roles:
 
 - Admin
-- Manager
+- Moderator
 - User
 
 ## License

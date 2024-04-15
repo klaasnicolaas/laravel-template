@@ -47,7 +47,7 @@ class PermissionTableSeeder extends Seeder
         /**
          * Admin role
          */
-        Role::create(['name' => 'Manager'])
+        Role::create(['name' => 'Moderator'])
             ->givePermissionTo([
                 'user-read',
                 'role-read',
