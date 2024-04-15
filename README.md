@@ -34,6 +34,14 @@ To create an admin user for the Filament dashboard, run the following command:
 php artisan make:filament-user
 ```
 
+### Roles and permissions
+
+By default there are 3 types of roles:
+
+- Admin
+- Moderator
+- User
+
 ## License
 
 Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more information.
