@@ -58,24 +58,24 @@ class RolePolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Role $role): bool
-    {
-        return false;
-    }
+    // public function restore(User $user, Role $role): bool
+    // {
+    //     return false;
+    // }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Role $role): bool
-    {
-        return $user->hasPermissionTo('role-delete');
-    }
+    // public function forceDelete(User $user, Role $role): bool
+    // {
+    //     return $user->hasPermissionTo('role-delete');
+    // }
 
     /**
      * Determine whether the user can permanently delete multiple models.
      */
-    public function forceDeleteAny(User $user, Role $role): bool
-    {
-        return $user->hasPermissionTo('role-delete');
-    }
+    // public function forceDeleteAny(User $user, Role $role): bool
+    // {
+    //     return $user->hasPermissionTo('role-delete');
+    // }
 }
