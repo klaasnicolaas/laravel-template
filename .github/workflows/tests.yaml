@@ -107,4 +107,11 @@ jobs:
           DB_DATABASE: db_test_laravel
           DB_PORT: ${{ job.services.mysql.ports[3306] }}
           DB_USER: laravel_user
-        run: vendor/bin/pest --coverage
+        run: vendor/bin/pest --coverage --coverage-clover coverage.xml .
+
+      - name: 🚀 Upload coverage to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./laravel/coverage.xml
+          flags: pest
