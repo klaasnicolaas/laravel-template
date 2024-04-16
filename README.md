@@ -21,6 +21,7 @@ This is a template repository for Laravel projects, including the following feat
 - [Laravel Pint][pint] (linting)
 - Devcontainer for Visual Studio Code
 - [Filament PHP][filament] (admin dashboard)
+- [GIthub Actions](.github/workflows) for CI/CD
 
 ## Getting Started
 

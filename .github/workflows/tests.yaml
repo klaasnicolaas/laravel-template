@@ -1,0 +1,117 @@
+---
+name: Testing
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pest:
+    name: "🧹 Laravel Pest (PHP: ${{ matrix.php-versions }} - Laravel: ${{ matrix.laravel }})"
+    runs-on: ${{ matrix.operating-system }}
+    # Service container MySQL
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_USER: laravel_user
+          MYSQL_DATABASE: db_test_laravel
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 33306:3306
+        # Set health checks to wait until mysql database has started (it takes some seconds to start)
+        options: --health-cmd "mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 10
+    env:
+      FOLDER: ./laravel
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ["8.2", "8.3"]
+        laravel: ["11.*"]
+        include:
+          - laravel: 11.*
+            testbench: 9.*
+    steps:
+      - name: ⤵️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🏗 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: 💻 Show PHP and NPM versions
+        run: |
+          npm --version
+          php --version
+
+      - name: 🏗 Install NPM packages
+        working-directory: ${{env.FOLDER}}
+        run: npm ci
+
+      - name: 🛠️ Build frontend
+        working-directory: ${{env.FOLDER}}
+        run: npm run build
+
+      - name: 🏗 Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@2.30.2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, bcmath
+          coverage: pcov
+
+      - name: 🛠️ Copy ENV Laravel Configuration for CI
+        working-directory: ${{env.FOLDER}}
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: 🏗 Install Laravel Dependencies
+        working-directory: ${{env.FOLDER}}
+        run: |
+          composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      # - name: Show files in folder
+      #   working-directory: ${{env.FOLDER}}
+      #   run: ls -lao
+
+      - name: 🛠️ Generate key
+        working-directory: ${{env.FOLDER}}
+        run: |
+          php artisan key:generate
+          php artisan config:clear
+
+      - name: 🛠️ Directory Permissions
+        working-directory: ${{env.FOLDER}}
+        run: chmod -R 777 storage bootstrap/cache
+
+      - name: 🚀 Run Migrations
+        working-directory: ${{env.FOLDER}}
+        # Set environment
+        env:
+          DB_CONNECTION: mysql
+          DB_DATABASE: db_test_laravel
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+          DB_USER: laravel_user
+        run: php artisan migrate
+
+      - name: 🚀 Execute tests (Unit and Feature tests) via Pest
+        working-directory: ${{env.FOLDER}}
+        # Set environment
+        env:
+          DB_CONNECTION: mysql
+          DB_DATABASE: db_test_laravel
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+          DB_USER: laravel_user
+        run: vendor/bin/pest --coverage --coverage-clover coverage.xml
+
+      - name: 🚀 Upload coverage to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./laravel/coverage.xml
+          flags: pest
