@@ -73,6 +73,7 @@ jobs:
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
       - name: 🏗 Install Laravel Dependencies
+        working-directory: ${{env.FOLDER}}
         run: |
           composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
