@@ -1,0 +1,38 @@
+---
+name: Typing
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+env:
+  DEFAULT_PHP: "8.3"
+  DEFAULT_FOLDER: "./laravel"
+
+jobs:
+  phpstan:
+    name: 🧹 Larastan
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: 🏗 Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@2.30.2
+        with:
+          php-version: ${{env.DEFAULT_PHP}}
+          coverage: none
+
+      - name: 🏗 Install Laravel Dependencies
+        working-directory: ${{env.DEFAULT_FOLDER}}
+        run: |
+          composer install -n --prefer-dist
+
+      - name: 🚀 Run Static Analysis
+        working-directory: ${{env.DEFAULT_FOLDER}}
+        run: ./vendor/bin/phpstan --memory-limit=1G --error-format=github
