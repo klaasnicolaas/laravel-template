@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Permission;
 use App\Models\Role;
-use App\Policies\PermissionPolicy;
 use App\Policies\RolePolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;

@@ -16,7 +16,7 @@ it('can render users index page', function () {
         ->assertSuccessful();
 });
 
-it('can create new user', function() {
+it('can create new user', function () {
     $newUser = User::factory()->make();
 
     livewire(UserResource\Pages\CreateUser::class)
