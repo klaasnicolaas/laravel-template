@@ -15,13 +15,15 @@
 
 This is a template repository for Laravel projects, including the following features:
 
-- Laravel 11.x
 - PHP 8.3
+- Laravel 11.x
 - [Laravel Sail][sail] (docker)
-- [Laravel Pint][pint] (linting)
-- Devcontainer for Visual Studio Code
 - [Filament PHP][filament] (admin dashboard)
+- [Devcontainer][devcontainer] for Visual Studio Code
 - [GIthub Actions](.github/workflows) for CI/CD
+    - [Pest](.github/workflows/tests.yaml)
+    - [Pint](.github/workflows/linting.yaml)
+    - [Larastan](.github/workflows/typing.yaml)
 
 ## Getting Started
 
@@ -49,7 +51,7 @@ Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more informa
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [sail]: https://laravel.com/docs/11.x/sail
-[pint]: https://laravel.com/docs/11.x/pint
+[devcontainer]: https://laravel.com/docs/11.x/sail#using-devcontainers
 [filament]: https://filamentphp.com
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge

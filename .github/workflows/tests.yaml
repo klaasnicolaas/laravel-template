@@ -8,6 +8,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  DEFAULT_FOLDER: "./laravel"
+
 jobs:
   pest:
     name: "🧹 Laravel Pest (PHP: ${{ matrix.php-versions }} - Laravel: ${{ matrix.laravel }})"
@@ -24,8 +27,6 @@ jobs:
           - 33306:3306
         # Set health checks to wait until mysql database has started (it takes some seconds to start)
         options: --health-cmd "mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 10
-    env:
-      FOLDER: ./laravel
     strategy:
       fail-fast: false
       matrix:
@@ -52,11 +53,11 @@ jobs:
           php --version
 
       - name: 🏗 Install NPM packages
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: npm ci
 
       - name: 🛠️ Build frontend
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: npm run build
 
       - name: 🏗 Setup PHP, with composer and extensions
@@ -67,30 +68,30 @@ jobs:
           coverage: pcov
 
       - name: 🛠️ Copy ENV Laravel Configuration for CI
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
       - name: 🏗 Install Laravel Dependencies
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: |
           composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       # - name: Show files in folder
-      #   working-directory: ${{env.FOLDER}}
+      #   working-directory: ${{env.DEFAULT_FOLDER}}
       #   run: ls -lao
 
       - name: 🛠️ Generate key
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: |
           php artisan key:generate
           php artisan config:clear
 
       - name: 🛠️ Directory Permissions
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         run: chmod -R 777 storage bootstrap/cache
 
       - name: 🚀 Run Migrations
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         # Set environment
         env:
           DB_CONNECTION: mysql
@@ -100,7 +101,7 @@ jobs:
         run: php artisan migrate
 
       - name: 🚀 Execute tests (Unit and Feature tests) via Pest
-        working-directory: ${{env.FOLDER}}
+        working-directory: ${{env.DEFAULT_FOLDER}}
         # Set environment
         env:
           DB_CONNECTION: mysql
