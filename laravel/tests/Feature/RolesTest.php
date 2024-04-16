@@ -36,7 +36,7 @@ it('unauthorized user cannot view a role', function () {
         ->assertForbidden();
 });
 
-it('can create new role', function() {
+it('can create new role', function () {
     $newRole = Role::factory()->make();
 
     livewire(RoleResource\Pages\CreateRole::class)
