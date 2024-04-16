@@ -25,11 +25,7 @@ jobs:
         ports:
           - 33306:3306
         # Set health checks to wait until mysql database has started (it takes some seconds to start)
-        options: >-
-          --health-cmd="mysqladmin ping
-          --health-interval=10s
-          --health-timeout=10s
-          --health-retries=3
+        options: --health-cmd "mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 10
     env:
       FOLDER: ./laravel
     strategy:
