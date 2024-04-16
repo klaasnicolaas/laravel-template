@@ -9,7 +9,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				// "mikestead.dotenv",
+				"mikestead.dotenv",
+				"bradlc.vscode-tailwindcss"
 				// "amiralizadeh9480.laravel-extra-intellisense",
 				// "ryannaddy.laravel-artisan",
 				// "onecentlin.laravel5-snippets",
