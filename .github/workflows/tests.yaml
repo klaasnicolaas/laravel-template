@@ -15,7 +15,7 @@ jobs:
     # Service container MySQL
     services:
       mysql:
-        image: mysql:latest
+        image: mysql:8.0
         env:
           MYSQL_USER: laravel_user
           MYSQL_PASSWORD: ${{ secrets.DB_PASSWORD }}
@@ -42,7 +42,7 @@ jobs:
           - laravel: 11.*
             testbench: 9.*
     steps:
-      - name: ⤵️ Chheckout
+      - name: ⤵️ Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
