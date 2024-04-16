@@ -100,6 +100,8 @@
   description: "This PR causes a minor version bump in the version number."
 
 - name: "php"
-  color: "#45229e"
+  color: "45229e"
+  description: "This PR is related to PHP."
 - name: "javascript"
-  color: "#168700"
+  color: "168700"
+  description: "This PR is related to JavaScript."
