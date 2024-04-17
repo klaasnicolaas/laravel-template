@@ -29,6 +29,9 @@ class PermissionTableSeeder extends Seeder
             'user-delete',
             'user-read',
             'user-update',
+            'view-backups',
+            'download-backup',
+            'delete-backup',
         ];
 
         /**
@@ -51,6 +54,7 @@ class PermissionTableSeeder extends Seeder
             ->givePermissionTo([
                 'user-read',
                 'role-read',
+                'view-backups',
             ]);
 
         // User
