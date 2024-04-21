@@ -49,10 +49,15 @@ class User extends Authenticatable implements FilamentUser
     }
 
     /**
-     * Determine if the user can access the Filament admin panel.
+     * Checks if a user can access a panel based on their email and email verification status.
+     *
+     * @param Panel $panel The panel object that the user is trying to access.
+     * @return bool Returns a boolean value indicating if the user can access the panel.
      */
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->hasRole(['Admin', 'Moderator']);
+        if ($panel->getId() === 'admin') {
+            return $this->hasRole(['Super Admin', 'Moderator']);
+        }
     }
 }
