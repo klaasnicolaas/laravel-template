@@ -61,7 +61,7 @@ jobs:
         run: npm run build
 
       - name: 🏗 Setup PHP, with composer and extensions
-        uses: shivammathur/setup-php@2.30.2
+        uses: shivammathur/setup-php@2.30.3
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, bcmath
