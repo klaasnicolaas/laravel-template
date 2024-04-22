@@ -13,14 +13,16 @@
 
 ## About
 
-This is a template repository for Laravel projects, including the following features:
+This is a Laravel template repository for new projects, based on the TALL stack and includes a lot of features to get started quickly:
 
 - PHP 8.3
 - Laravel 11.x
 - [Laravel Sail][sail] (docker)
+- [Laravel Backup][backup] (from spatie)
 - [Filament PHP][filament] (admin dashboard)
+- [Filament Shield][shield] (roles and permissions)
 - [Devcontainer][devcontainer] for Visual Studio Code
-- [GIthub Actions](.github/workflows) for CI/CD
+- [GIthub Actions](.github/workflows) for CI/CD on Github
     - [Pest](.github/workflows/tests.yaml)
     - [Pint](.github/workflows/linting.yaml)
     - [Larastan](.github/workflows/typing.yaml)
@@ -50,9 +52,11 @@ By default there are 3 types of roles:
 Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[sail]: https://laravel.com/docs/11.x/sail
+[backup]: https://spatie.be/docs/laravel-backup/v8/introduction
 [devcontainer]: https://laravel.com/docs/11.x/sail#using-devcontainers
 [filament]: https://filamentphp.com
+[sail]: https://laravel.com/docs/11.x/sail
+[shield]: https://github.com/bezhanSalleh/filament-shield
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge
 [contributors-shield]: https://img.shields.io/github/contributors/klaasnicolaas/laravel-template.svg?style=for-the-badge
