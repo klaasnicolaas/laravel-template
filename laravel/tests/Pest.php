@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\User;
-use Database\Seeders\PermissionTableSeeder;
+use Database\Seeders\ShieldSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -17,7 +17,7 @@ use Tests\TestCase;
 */
 
 uses(TestCase::class)->beforeEach(function () {
-    $this->seed(PermissionTableSeeder::class);
+    $this->seed(ShieldSeeder::class);
 })->in('Feature');
 uses(RefreshDatabase::class)->in('Feature');
 
