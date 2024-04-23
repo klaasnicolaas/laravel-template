@@ -45,9 +45,13 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
+            // Plugins
             ->plugin(FilamentSpatieLaravelBackupPlugin::make()
                 ->usingPage(Backups::class)
                 ->usingPolingInterval('10s'))
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+            ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,

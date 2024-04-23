@@ -14,10 +14,25 @@ class UserTableSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $user = User::factory()->create([
+        // Super Admin
+        $admin = User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@example.com',
         ]);
-        $user->assignRole('Admin');
+        $admin->assignRole('Super Admin');
+
+        // Moderator
+        $moderator = User::factory()->create([
+            'name' => 'Moderator',
+            'email' => 'moderator@example.com',
+        ]);
+        $moderator->assignRole('Moderator');
+
+        // User
+        $user = User::factory()->create([
+            'name' => 'User',
+            'email' => 'user@example.com',
+        ]);
+        $user->assignRole('User');
     }
 }

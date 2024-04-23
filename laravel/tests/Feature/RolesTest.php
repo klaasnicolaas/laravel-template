@@ -1,13 +1,13 @@
 <?php
 
-use App\Filament\Resources\RoleResource;
 use App\Models\Role;
+use BezhanSalleh\FilamentShield\Resources\RoleResource;
 use Filament\Actions\DeleteAction;
 
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->admin = createUser('Admin');
+    $this->admin = createUser('Super Admin');
     $this->actingAs($this->admin);
 });
 
