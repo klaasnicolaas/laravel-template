@@ -82,11 +82,11 @@ class EditProfile extends Page implements HasForms
                             ->rule(Password::default())
                             ->autocomplete('new-password')
                             ->dehydrateStateUsing(fn ($state): string => Hash::make($state))
-                            ->live(debounce: 500)
-                            ->same('passwordConfirmation'),
+                            ->live(debounce: 500),
                         Forms\Components\TextInput::make('passwordConfirmation')
                             ->password()
                             ->required()
+                            ->same('password')
                             ->dehydrated(false),
                     ]),
             ])
