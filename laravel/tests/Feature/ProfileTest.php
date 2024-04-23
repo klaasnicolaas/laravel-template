@@ -33,7 +33,6 @@ it('can succesfull update user profile', function () {
     ]);
 });
 
-// update user password
 it('can succesfull update user password', function () {
     $newPassword = 'new-password';
 
@@ -50,7 +49,6 @@ it('can succesfull update user password', function () {
     $this->assertTrue(Hash::check($newPassword, $this->admin->password));
 });
 
-// test update user profile with invalid email
 test('validates user profile update with invalid email', function () {
     $newUser = User::factory()->make();
 
