@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Backups;
+use App\Filament\Pages\EditProfile;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -40,12 +41,15 @@ class AdminPanelProvider extends PanelProvider
             // Navigation
             ->sidebarCollapsibleOnDesktop()
             ->userMenuItems([
+                'profile' => MenuItem::make()->url(fn (): string => EditProfile::getUrl()),
                 'logout' => MenuItem::make()->label('Log Out'),
             ])
             ->navigationItems([
                 NavigationItem::make('Github')
                     ->url('https://github.com/klaasnicolaas/laravel-template', shouldOpenInNewTab: true)
-                    ->icon('heroicon-o-link'),
+                    ->icon('heroicon-o-link')
+                    ->group('Information')
+                    ->sort(2),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
