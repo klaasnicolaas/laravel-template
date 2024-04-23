@@ -17,6 +17,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
+/**
+ * @property Form $editProfileForm
+ * @property Form $editPasswordForm
+ */
 class EditProfile extends Page implements HasForms
 {
     use InteractsWithForms;
