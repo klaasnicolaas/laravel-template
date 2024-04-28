@@ -14,7 +14,7 @@ class ShieldSeeder extends Seeder
 
         $rolesWithPermissions = '[
             {
-                "name":"Super Admin",
+                "name":"admin",
                 "guard_name":"web",
                 "permissions":[
                     "view_role",
@@ -41,7 +41,7 @@ class ShieldSeeder extends Seeder
                 ]
             },
             {
-                "name":"Moderator",
+                "name":"moderator",
                 "guard_name":"web",
                 "permissions":[
                     "view_user",
@@ -51,7 +51,7 @@ class ShieldSeeder extends Seeder
                 ]
             },
             {
-                "name":"User",
+                "name":"user",
                 "guard_name":"web",
                 "permissions":[]
             }
