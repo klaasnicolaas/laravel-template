@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UserRole;
 use App\Models\User;
 use Database\Seeders\ShieldSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -47,9 +48,9 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function createUser(string $roleName = 'User'): User
+function createUser(UserRole $role = UserRole::User): user
 {
     $user = User::factory()->create();
 
-    return $user->assignRole($roleName);
+    return $user->assignRole($role->value);
 }

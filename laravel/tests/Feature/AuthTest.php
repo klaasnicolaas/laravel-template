@@ -1,12 +1,13 @@
 <?php
 
+use App\Enums\UserRole;
 use Filament\Facades\Filament;
 use Filament\Pages\Auth\Login;
 
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->user = createUser('User');
+    $this->user = createUser(UserRole::User);
 });
 
 test('unauthenticated users are redirected to login page', function () {

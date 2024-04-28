@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UserRole;
 use App\Models\Role;
 use BezhanSalleh\FilamentShield\Resources\RoleResource;
 use Filament\Actions\DeleteAction;
@@ -7,7 +8,7 @@ use Filament\Actions\DeleteAction;
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->admin = createUser('Super Admin');
+    $this->admin = createUser(UserRole::Admin);
     $this->actingAs($this->admin);
 });
 
