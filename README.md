@@ -13,7 +13,9 @@
 
 ## About
 
-This is a Laravel template repository for new projects, based on the TALL stack and includes a lot of features to get started quickly:
+This is a laravel template repository project, which can be used as a basis for future projects. Based on the TALL stack and packed with useful features to get started right away.
+
+### Features
 
 - PHP 8.3
 - Laravel 11.x
@@ -27,7 +29,7 @@ This is a Laravel template repository for new projects, based on the TALL stack 
     - [Pint](.github/workflows/linting.yaml)
     - [Larastan](.github/workflows/typing.yaml)
 
-## Getting Started
+## Setting up development environment
 
 TODO
 
