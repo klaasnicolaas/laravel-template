@@ -5,10 +5,6 @@
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
   "labels": ["dependencies"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
   "commitMessagePrefix": "⬆️",
   "packageRules": [
     {
