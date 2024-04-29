@@ -15,7 +15,7 @@
 
 This is a laravel template repository project, which can be used as a basis for future projects. Based on the TALL stack and packed with useful features to get started right away.
 
-### Features
+## Features
 
 - PHP 8.3
 - Laravel 11.x
@@ -28,10 +28,6 @@ This is a laravel template repository project, which can be used as a basis for 
     - [Pest](.github/workflows/tests.yaml)
     - [Pint](.github/workflows/linting.yaml)
     - [Larastan](.github/workflows/typing.yaml)
-
-## Setting up development environment
-
-TODO
 
 ### Create admin user
 
@@ -48,6 +44,52 @@ By default there are 3 types of roles:
 - Admin
 - Moderator
 - User
+
+## Setting up development environment
+
+1. Clone the repository
+2. Open a terminal and navigate to the **laravel** folder
+
+3. Copy the `.env.example` file to `.env`:
+```bash
+cp .env.example .env
+```
+
+4. Uncomment and/or change the following lines in the `.env` file:
+```bash
+APP_NAME=Template
+
+FORWARD_APP_PORT=80
+FORWARD_DB_PORT=3306
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+```
+
+5. Change the name in `docker-compose.yml`:
+```yaml
+---
+name: 'template'
+```
+
+6. Install the composer dependencies and generate a new application key:
+```bash
+composer install && php artisan key:generate
+```
+
+7. Start the development server:
+```bash
+./vendor/bin/sail up -d
+```
+
+8. Run the database migrations and seed the database:
+```bash
+./vendor/bin/sail php artisan migrate --seed
+```
 
 ## License
 
