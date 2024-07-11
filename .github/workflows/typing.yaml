@@ -23,7 +23,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: 🏗 Setup PHP, with composer and extensions
-        uses: shivammathur/setup-php@2.31.0
+        uses: shivammathur/setup-php@2.31.1
         with:
           php-version: ${{env.DEFAULT_PHP}}
           coverage: none
