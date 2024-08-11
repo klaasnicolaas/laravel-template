@@ -11,8 +11,8 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "shuvroroy/filament-spatie-laravel-backup": "^2.1",
-        "spatie/laravel-backup": "^8.6",
+        "shuvroroy/filament-spatie-laravel-backup": "dev-main",
+        "spatie/laravel-backup": "^9.0",
         "spatie/laravel-permission": "^6.4"
     },
     "require-dev": {
@@ -71,6 +71,12 @@
             "php-http/discovery": true
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/klaasnicolaas/filament-spatie-laravel-backup"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }

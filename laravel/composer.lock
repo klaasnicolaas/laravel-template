@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f861292cd4a49b7d430cfaee8d57640b",
+    "content-hash": "3accfaf9405962d4d66c25126b4e6f27",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4846,23 +4846,23 @@
         },
         {
             "name": "shuvroroy/filament-spatie-laravel-backup",
-            "version": "v2.2.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/shuvroroy/filament-spatie-laravel-backup.git",
-                "reference": "92533cb170826eba5efc40e0966c946f1cb8ebaa"
+                "url": "https://github.com/klaasnicolaas/filament-spatie-laravel-backup.git",
+                "reference": "c63ffdb99827ad29fc2a5191e15781fbeae036d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shuvroroy/filament-spatie-laravel-backup/zipball/92533cb170826eba5efc40e0966c946f1cb8ebaa",
-                "reference": "92533cb170826eba5efc40e0966c946f1cb8ebaa",
+                "url": "https://api.github.com/repos/klaasnicolaas/filament-spatie-laravel-backup/zipball/c63ffdb99827ad29fc2a5191e15781fbeae036d9",
+                "reference": "c63ffdb99827ad29fc2a5191e15781fbeae036d9",
                 "shasum": ""
             },
             "require": {
                 "calebporzio/sushi": "^2.4",
                 "filament/filament": "^3.0",
-                "php": "^8.1",
-                "spatie/laravel-backup": "^8.0",
+                "php": "^8.2|^8.3",
+                "spatie/laravel-backup": "^8.0|^9.0",
                 "spatie/laravel-package-tools": "^1.15"
             },
             "require-dev": {
@@ -4877,6 +4877,7 @@
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -4890,7 +4891,22 @@
                     "ShuvroRoy\\FilamentSpatieLaravelBackup\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "ShuvroRoy\\FilamentSpatieLaravelBackup\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan analyse"
+                ],
+                "test": [
+                    "vendor/bin/pest"
+                ],
+                "format": [
+                    "vendor/bin/pint"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -4909,16 +4925,15 @@
                 "laravel-backup"
             ],
             "support": {
-                "issues": "https://github.com/shuvroroy/filament-spatie-laravel-backup/issues",
-                "source": "https://github.com/shuvroroy/filament-spatie-laravel-backup/tree/v2.2.0"
+                "source": "https://github.com/klaasnicolaas/filament-spatie-laravel-backup/tree/main"
             },
             "funding": [
                 {
-                    "url": "https://github.com/shuvroroy",
-                    "type": "github"
+                    "type": "github",
+                    "url": "https://github.com/shuvroroy"
                 }
             ],
-            "time": "2024-07-07T12:14:12+00:00"
+            "time": "2024-08-11T10:01:40+00:00"
         },
         {
             "name": "spatie/color",
@@ -5103,16 +5118,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "8.8.2",
+            "version": "9.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "5b672713283703a74c629ccd67b1d77eb57e24b9"
+                "reference": "9f116d440940f0670016f6f8324a3bf8fd03f9ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/5b672713283703a74c629ccd67b1d77eb57e24b9",
-                "reference": "5b672713283703a74c629ccd67b1d77eb57e24b9",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/9f116d440940f0670016f6f8324a3bf8fd03f9ef",
+                "reference": "9f116d440940f0670016f6f8324a3bf8fd03f9ef",
                 "shasum": ""
             },
             "require": {
@@ -5124,7 +5139,7 @@
                 "illuminate/notifications": "^10.10.0|^11.0",
                 "illuminate/support": "^10.10.0|^11.0",
                 "league/flysystem": "^3.0",
-                "php": "^8.1",
+                "php": "^8.2",
                 "spatie/db-dumper": "^3.0",
                 "spatie/laravel-package-tools": "^1.6.2",
                 "spatie/laravel-signal-aware-command": "^1.2|^2.0",
@@ -5143,7 +5158,8 @@
                 "pestphp/pest": "^1.20|^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.1"
+                "phpstan/phpstan-phpunit": "^1.1",
+                "rector/rector": "^1.1"
             },
             "suggest": {
                 "laravel/slack-notification-channel": "Required for sending notifications via Slack"
@@ -5186,7 +5202,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/8.8.2"
+                "source": "https://github.com/spatie/laravel-backup/tree/9.0.4"
             },
             "funding": [
                 {
@@ -5198,7 +5214,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-08-07T11:07:52+00:00"
+            "time": "2024-07-15T08:36:14+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -11764,7 +11780,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "shuvroroy/filament-spatie-laravel-backup": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
