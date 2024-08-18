@@ -43,7 +43,7 @@ By default there are 3 types of roles:
 
 Follow the steps below to get started with the Laravel template project.
 
-## Setting up development environment
+### Setting up development environment
 
 1. Clone the repository
 2. Open a terminal and navigate to the **laravel** folder
