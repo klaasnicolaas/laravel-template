@@ -17,6 +17,8 @@ This is a laravel template repository project, which can be used as a basis for 
 
 ## Features
 
+The Laravel template project comes with the following features:
+
 - PHP 8.3
 - Laravel 11.x
 - [Laravel Sail][sail] (docker)
@@ -29,21 +31,17 @@ This is a laravel template repository project, which can be used as a basis for 
     - [Pint](.github/workflows/linting.yaml)
     - [Larastan](.github/workflows/typing.yaml)
 
-### Create admin user
-
-To create an admin user for the Filament dashboard, run the following command:
-
-```bash
-php artisan make:filament-user
-```
-
-### Roles and permissions
+## Roles and permissions
 
 By default there are 3 types of roles:
 
 - Admin
 - Moderator
 - User
+
+## Getting started
+
+Follow the steps below to get started with the Laravel template project.
 
 ## Setting up development environment
 
@@ -89,6 +87,27 @@ composer install && php artisan key:generate
 8. Run the database migrations and seed the database:
 ```bash
 ./vendor/bin/sail php artisan migrate --seed
+```
+
+9. Build the frontend assets:
+```bash
+npm install && npm run dev
+```
+
+### Create admin user
+
+To create an admin user for the Filament dashboard, run the following command:
+
+```bash
+php artisan make:filament-user
+```
+
+### Testing with Pest
+
+To run the tests with Pest, run the following command:
+
+```bash
+./vendor/bin/sail pest --coverage
 ```
 
 ## License
