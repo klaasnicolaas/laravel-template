@@ -48,7 +48,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function createUser(UserRole $role = UserRole::User): user
+function createUser(UserRole $role = UserRole::USER): user
 {
     $user = User::factory()->create();
 
