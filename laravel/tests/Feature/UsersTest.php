@@ -8,7 +8,7 @@ use Filament\Actions\DeleteAction;
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->admin = createUser(UserRole::Admin);
+    $this->admin = createUser(UserRole::ADMIN);
     $this->actingAs($this->admin);
 });
 

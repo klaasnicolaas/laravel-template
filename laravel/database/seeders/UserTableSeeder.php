@@ -20,20 +20,20 @@ class UserTableSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@example.com',
         ]);
-        $admin->assignRole(UserRole::Admin->value);
+        $admin->assignRole(UserRole::ADMIN->value);
 
         // Moderator
         $moderator = User::factory()->create([
             'name' => 'Moderator',
             'email' => 'moderator@example.com',
         ]);
-        $moderator->assignRole(UserRole::Moderator->value);
+        $moderator->assignRole(UserRole::MODERATOR->value);
 
         // User
         $user = User::factory()->create([
             'name' => 'User',
             'email' => 'user@example.com',
         ]);
-        $user->assignRole(UserRole::User->value);
+        $user->assignRole(UserRole::USER->value);
     }
 }

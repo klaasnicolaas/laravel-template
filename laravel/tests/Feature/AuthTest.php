@@ -7,7 +7,7 @@ use Filament\Pages\Auth\Login;
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->user = createUser(UserRole::User);
+    $this->user = createUser(UserRole::USER);
 });
 
 test('unauthenticated users are redirected to login page', function () {

@@ -8,13 +8,21 @@ use Filament\Actions\DeleteAction;
 use function Pest\Livewire\livewire;
 
 beforeEach(function () {
-    $this->admin = createUser(UserRole::Admin);
+    $this->admin = createUser(UserRole::ADMIN);
     $this->actingAs($this->admin);
 });
 
 it('can render roles index page', function () {
     $this->get(RoleResource::getUrl('index'))
         ->assertSuccessful();
+});
+
+it('unauthorized user cannot view roles', function () {
+    $user = createUser();
+
+    $this->actingAs($user)
+        ->get(RoleResource::getUrl('index'))
+        ->assertForbidden();
 });
 
 it('can view a role', function () {
@@ -24,17 +32,6 @@ it('can view a role', function () {
         'record' => $role,
     ]))
         ->assertSuccessful();
-});
-
-it('unauthorized user cannot view a role', function () {
-    $role = Role::factory()->create();
-    $user = createUser();
-
-    $this->actingAs($user)
-        ->get(RoleResource::getUrl('view', [
-            'record' => $role,
-        ]))
-        ->assertForbidden();
 });
 
 it('can create new role', function () {
