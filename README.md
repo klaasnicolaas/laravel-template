@@ -23,6 +23,7 @@ The Laravel template project comes with the following features:
 - Laravel 11.x
 - [Laravel Sail][sail] (docker)
 - [Laravel Backup][backup] (from spatie)
+- [Log Viewer][log-viewer]
 - [Filament PHP][filament] (admin dashboard)
 - [Filament Shield][shield] (roles and permissions)
 - [Devcontainer][devcontainer] for Visual Studio Code
@@ -120,6 +121,7 @@ Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more informa
 [filament]: https://filamentphp.com
 [sail]: https://laravel.com/docs/11.x/sail
 [shield]: https://github.com/bezhanSalleh/filament-shield
+[log-viewer]: https://log-viewer.opcodes.io
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge
 [contributors-shield]: https://img.shields.io/github/contributors/klaasnicolaas/laravel-template.svg?style=for-the-badge
