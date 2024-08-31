@@ -50,6 +50,11 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-link')
                     ->group('Information')
                     ->sort(2),
+                NavigationItem::make('Log Viewer')
+                    ->url(fn (): string => route('log-viewer.index'), shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-document-text')
+                    ->group('Settings')
+                    ->sort(4),
             ])
             ->databaseNotifications()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
