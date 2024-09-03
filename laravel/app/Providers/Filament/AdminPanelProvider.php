@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Enums\UserRole;
 use App\Filament\Pages\Backups;
 use App\Filament\Pages\EditProfile;
 use Filament\Http\Middleware\Authenticate;
@@ -52,6 +53,7 @@ class AdminPanelProvider extends PanelProvider
                     ->sort(2),
                 NavigationItem::make('Log Viewer')
                     ->url(fn (): string => route('log-viewer.index'), shouldOpenInNewTab: true)
+                    ->visible(fn (): bool => auth()->user()?->hasRole(UserRole::ADMIN))
                     ->icon('heroicon-o-document-text')
                     ->group('Settings')
                     ->sort(4),
