@@ -9,6 +9,7 @@
         "php": "^8.2",
         "bezhansalleh/filament-shield": "^3.2",
         "filament/filament": "^3.2",
+        "itsgoingd/clockwork": "^5.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "opcodesio/log-viewer": "^3.11",
