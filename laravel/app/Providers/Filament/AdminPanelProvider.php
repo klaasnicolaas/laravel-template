@@ -70,6 +70,13 @@ class AdminPanelProvider extends PanelProvider
                 ->usingPolingInterval('10s'))
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                \Jeffgreco13\FilamentBreezy\BreezyCore::make()
+                    ->myProfile(
+                        shouldRegisterUserMenu: true,
+                        hasAvatars: true,
+                        slug: 'profile',
+                    )
+                    ->enableTwoFactorAuthentication(),
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
