@@ -12,6 +12,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Hash;
@@ -25,6 +26,14 @@ class UserResource extends Resource
     protected static ?int $navigationSort = 1;
 
     protected static ?string $navigationGroup = 'Settings';
+
+    /**
+     * Display number of records in the navigation.
+     */
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {
@@ -59,6 +68,15 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('avatar_url')
+                    ->circular()
+                    ->label('Avatar')
+                    ->defaultImageUrl(function ($record) {
+                        $firstLetter = substr($record->name, 0, 1);
+                        $avatarUrlIsNull = 'https://ui-avatars.com/api/?name='.urlencode($firstLetter).'&color=FFFFFF&background=030712';
+
+                        return $record->avatar_url ?? $avatarUrlIsNull;
+                    }),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')
