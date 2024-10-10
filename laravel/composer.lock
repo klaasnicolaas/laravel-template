@@ -1228,16 +1228,16 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
-                "reference": "79dce62359b61b755a5e3d8faa0e047a1f92ad9a"
+                "reference": "886108b59ce99edc26f5bc1231134a95ec58718a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/actions/zipball/79dce62359b61b755a5e3d8faa0e047a1f92ad9a",
-                "reference": "79dce62359b61b755a5e3d8faa0e047a1f92ad9a",
+                "url": "https://api.github.com/repos/filamentphp/actions/zipball/886108b59ce99edc26f5bc1231134a95ec58718a",
+                "reference": "886108b59ce99edc26f5bc1231134a95ec58718a",
                 "shasum": ""
             },
             "require": {
@@ -1277,11 +1277,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2024-10-08T14:24:13+00:00"
+            "time": "2024-10-09T11:19:22+00:00"
         },
         {
             "name": "filament/filament",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
@@ -1346,16 +1346,16 @@
         },
         {
             "name": "filament/forms",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "94f0c7c66d766efc0f1f5c80e790e2391c7c09d7"
+                "reference": "896c868cca474b2e925a3e6162b7c76d8ff3e5fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/94f0c7c66d766efc0f1f5c80e790e2391c7c09d7",
-                "reference": "94f0c7c66d766efc0f1f5c80e790e2391c7c09d7",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/896c868cca474b2e925a3e6162b7c76d8ff3e5fc",
+                "reference": "896c868cca474b2e925a3e6162b7c76d8ff3e5fc",
                 "shasum": ""
             },
             "require": {
@@ -1398,11 +1398,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2024-10-08T14:24:11+00:00"
+            "time": "2024-10-09T11:19:26+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
@@ -1453,7 +1453,7 @@
         },
         {
             "name": "filament/notifications",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1505,7 +1505,7 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
@@ -1564,7 +1564,7 @@
         },
         {
             "name": "filament/tables",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
@@ -1616,7 +1616,7 @@
         },
         {
             "name": "filament/widgets",
-            "version": "v3.2.116",
+            "version": "v3.2.117",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
