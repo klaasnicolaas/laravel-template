@@ -5622,16 +5622,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "9.1.1",
+            "version": "9.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "70b48671e5e2dd15d4341800614481924910f636"
+                "reference": "56c1850f8867440cfa9e599509f1f85b9b0a1168"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/70b48671e5e2dd15d4341800614481924910f636",
-                "reference": "70b48671e5e2dd15d4341800614481924910f636",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/56c1850f8867440cfa9e599509f1f85b9b0a1168",
+                "reference": "56c1850f8867440cfa9e599509f1f85b9b0a1168",
                 "shasum": ""
             },
             "require": {
@@ -5706,7 +5706,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/9.1.1"
+                "source": "https://github.com/spatie/laravel-backup/tree/9.1.2"
             },
             "funding": [
                 {
@@ -5718,7 +5718,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-09-23T09:23:56+00:00"
+            "time": "2024-10-09T14:09:26+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
