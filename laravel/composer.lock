@@ -5368,16 +5368,16 @@
         },
         {
             "name": "shuvroroy/filament-spatie-laravel-backup",
-            "version": "v2.2.2",
+            "version": "v2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shuvroroy/filament-spatie-laravel-backup.git",
-                "reference": "6b2a172fbf746b2ca0327ab0608b83fe2aa58b69"
+                "reference": "78d5d2de32c94edec280568140c4534e975a19a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shuvroroy/filament-spatie-laravel-backup/zipball/6b2a172fbf746b2ca0327ab0608b83fe2aa58b69",
-                "reference": "6b2a172fbf746b2ca0327ab0608b83fe2aa58b69",
+                "url": "https://api.github.com/repos/shuvroroy/filament-spatie-laravel-backup/zipball/78d5d2de32c94edec280568140c4534e975a19a9",
+                "reference": "78d5d2de32c94edec280568140c4534e975a19a9",
                 "shasum": ""
             },
             "require": {
@@ -5432,7 +5432,7 @@
             ],
             "support": {
                 "issues": "https://github.com/shuvroroy/filament-spatie-laravel-backup/issues",
-                "source": "https://github.com/shuvroroy/filament-spatie-laravel-backup/tree/v2.2.2"
+                "source": "https://github.com/shuvroroy/filament-spatie-laravel-backup/tree/v2.2.3"
             },
             "funding": [
                 {
@@ -5440,7 +5440,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-14T05:41:00+00:00"
+            "time": "2024-10-20T12:11:50+00:00"
         },
         {
             "name": "spatie/color",
